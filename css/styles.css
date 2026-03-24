@@ -1,0 +1,745 @@
+/* ============================================
+   MANRIFZ Web Design — Landing Page Styles
+   ============================================ */
+
+/* --- CSS Variables / Color Palette --- */
+:root {
+  --color-white: #ffffff;
+  --color-beige: #F5F0EB;
+  --color-beige-dark: #EDE5DC;
+  --color-terracotta: #C9908D;
+  --color-terracotta-light: #D4A09C;
+  --color-terracotta-dark: #B07A77;
+  --color-logo-bg: #D4A0A0;
+  --color-text: #3A2E2A;
+  --color-text-light: #6B5B55;
+  --color-text-muted: #9A8A84;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-subtitle: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Container --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Section Tags & Titles --- */
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-subtitle);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.25;
+  margin-bottom: 24px;
+  letter-spacing: 0.01em;
+}
+
+/* --- Button --- */
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+  background-color: var(--color-terracotta);
+  padding: 16px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-terracotta-dark);
+  transform: translateY(-2px);
+}
+
+/* --- Animations --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Hidden (honeypot) --- */
+.hidden {
+  display: none !important;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.site-header {
+  background-color: var(--color-logo-bg);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: auto;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  mix-blend-mode: multiply;
+}
+
+/* ============================================
+   1. HERO
+   ============================================ */
+.hero {
+  background-color: var(--color-beige);
+  padding: 120px 0 100px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 300;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================
+   2. PRESENTACIÓN
+   ============================================ */
+.presentacion {
+  padding: 100px 0;
+  background-color: var(--color-white);
+}
+
+.presentacion-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.presentacion-text p {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.presentacion-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   3. SERVICIOS
+   ============================================ */
+.servicios {
+  padding: 100px 0;
+  background-color: var(--color-beige);
+  text-align: center;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.servicio-card {
+  background-color: var(--color-white);
+  border-radius: 16px;
+  padding: 40px 28px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(201, 144, 141, 0.12);
+}
+
+.servicio-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--color-beige);
+  color: var(--color-terracotta);
+  margin-bottom: 20px;
+}
+
+.servicio-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+
+.servicio-card p {
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+/* ============================================
+   4. PORTAFOLIO
+   ============================================ */
+.portafolio {
+  padding: 100px 0;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.portafolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.portafolio-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portafolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.portafolio-img {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-beige);
+}
+
+.portafolio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portafolio-card:hover .portafolio-img img {
+  transform: scale(1.03);
+}
+
+.portafolio-info {
+  padding: 24px;
+  text-align: left;
+}
+
+.portafolio-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.portafolio-info p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+/* ============================================
+   5. PROCESO DE TRABAJO
+   ============================================ */
+.proceso {
+  padding: 100px 0;
+  background-color: var(--color-beige);
+  text-align: center;
+}
+
+.proceso-timeline {
+  max-width: 650px;
+  margin: 48px auto 0;
+  text-align: left;
+}
+
+.proceso-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(201, 144, 141, 0.2);
+}
+
+.proceso-step:last-child {
+  border-bottom: none;
+}
+
+.step-number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-terracotta-light);
+  line-height: 1;
+  min-width: 50px;
+}
+
+.step-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.step-content p {
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+.proceso-quote {
+  margin-top: 56px;
+}
+
+.proceso-quote blockquote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-terracotta-dark);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ============================================
+   6. RESEÑAS
+   ============================================ */
+.resenas {
+  padding: 100px 0;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.resenas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.resena-card {
+  background-color: var(--color-beige);
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.resena-card:hover {
+  transform: translateY(-2px);
+}
+
+.resena-stars {
+  margin-bottom: 16px;
+}
+
+.resena-stars span {
+  color: var(--color-terracotta);
+  font-size: 1.1rem;
+  margin-right: 2px;
+}
+
+.resena-text {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.resena-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.resena-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-terracotta-light);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.resena-author strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.resena-author span {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* --- Testimonials CTA & Form --- */
+.resenas-cta {
+  margin-top: 48px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-terracotta);
+  background-color: transparent;
+  padding: 14px 36px;
+  border: 1.5px solid var(--color-terracotta);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-terracotta);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.resena-form-wrapper {
+  max-width: 480px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+
+.resena-form .form-group {
+  margin-bottom: 20px;
+}
+
+/* ============================================
+   7. INFORMACIÓN IMPORTANTE
+   ============================================ */
+.info-importante {
+  padding: 80px 0;
+  background-color: var(--color-beige);
+}
+
+.info-box {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--color-white);
+  border-radius: 20px;
+  padding: 56px 48px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+.info-box p {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  line-height: 1.9;
+}
+
+/* ============================================
+   8. CONTACTO
+   ============================================ */
+.contacto {
+  padding: 100px 0;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.contacto-intro {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  margin-bottom: 48px;
+}
+
+.contacto-form {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background-color: var(--color-beige);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 14px 18px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-terracotta-light);
+  box-shadow: 0 0 0 3px rgba(201, 144, 141, 0.15);
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239A8A84' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-form {
+  width: 100%;
+  padding: 18px;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+/* --- Instagram CTA --- */
+.instagram-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.btn-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--color-white);
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  padding: 14px 32px;
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-instagram:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(131, 58, 180, 0.3);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  background-color: var(--color-logo-bg);
+  padding: 48px 0;
+  text-align: center;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+  margin: 0 auto 16px;
+}
+
+.footer-social {
+  margin-bottom: 16px;
+}
+
+.footer-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.footer-instagram:hover {
+  color: var(--color-white);
+}
+
+.site-footer p {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .servicios-grid,
+  .portafolio-grid,
+  .resenas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 80px 0 70px;
+  }
+
+  .hero-title br {
+    display: none;
+  }
+
+  .servicios-grid,
+  .portafolio-grid,
+  .resenas-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .portafolio-img {
+    height: 200px;
+  }
+
+  .proceso-step {
+    gap: 16px;
+  }
+
+  .step-number {
+    font-size: 1.5rem;
+    min-width: 36px;
+  }
+
+  .info-box {
+    padding: 40px 28px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .presentacion,
+  .servicios,
+  .portafolio,
+  .proceso,
+  .resenas,
+  .contacto {
+    padding: 70px 0;
+  }
+
+  .info-importante {
+    padding: 60px 0;
+  }
+
+  .logo {
+    max-width: 180px;
+  }
+}
